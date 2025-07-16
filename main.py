@@ -1,11 +1,9 @@
+from stats import get_book_text_words
+
+
 def get_book_text(filepath):
     with open(filepath) as f:
         return f.read()
-
-
-def get_book_text_words(filepath):
-    with open(filepath) as f:
-        return f.read().split()
 
 
 def main():
