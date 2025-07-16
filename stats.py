@@ -8,9 +8,14 @@ def get_book_stats(filepath):
         text = f.read()
     char_count = {}
     for char in text:
-        char = char.lower()
-        if char in char_count:
-            char_count[char] += 1
-        else:
-            char_count[char] = 1
-    return char_count
+        if char.isalpha():
+            char = char.lower()
+            if char in char_count:
+                char_count[char]["num"] += 1
+            else:
+                char_count[char] = {"char": char, "num": 1}
+    return list(char_count.values())
+
+
+def sort_list(items):
+    return items["num"]
